@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HGW Store | Productos de bienestar</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!-- ==================== ENCABEZADO ==================== -->
+    <header class="header">
+       <div class="logo">
+            <span>HGW</span>
+            <small>STORE</small>
+        </div>
+        <nav class="menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+        <button class="btn-carrito" onclick="abrirCarrito()">
+            🛒 Carrito
+            <span id="contador-carrito">0</span>
+        </button>
+    </header>
+    <!-- ==================== INICIO ==================== -->
+    <section id="inicio" class="hero">
+        <div class="hero-contenido">
+            <p class="etiqueta">✨ BIENVENIDO A NUESTRA TIENDA</p>
+            <h1>
+                Productos para tu
+                <span>bienestar</span>
+            </h1>
+            <p>
+                Descubre nuestra selección de productos HGW
+                y encuentra lo que necesitas.
+            </p>
+            <a href="#productos" class="btn-principal">
+                🛍️ Ver productos
+            </a>
+        </div>
+    </section>
+    <!-- ===============================
+     FILTROS DE CATEGORÍAS
+================================ -->
+
+<div class="categorias">
+
+    <button onclick="filtrarCategoria('todos')" class="activo">
+        🛍️ Todos
+    </button>
+
+    <button onclick="filtrarCategoria('bebidas')">
+        ☕ Bebidas
+    </button>
+
+    <button onclick="filtrarCategoria('alimentos')">
+        🍎 Alimentos
+    </button>
+
+    <button onclick="filtrarCategoria('confiteria')">
+        🍬 Confitería
+    </button>
+
+    <button onclick="filtrarCategoria('cuidado')">
+        🧴 Cuidado personal
+    </button>
+
+    <button onclick="filtrarCategoria('higiene')">
+        🌸 Higiene
+    </button>
+
+    <button onclick="filtrarCategoria('accesorios')">
+        📿 Accesorios
+    </button>
+
+</div>
+    <!-- ==================== PRODUCTOS ==================== -->
+    <section id="productos" class="productos">
+        <div class="titulo-productos">
+            <div>
+                <p class="etiqueta">NUESTRO CATÁLOGO</p>
+                <h2>Productos destacados</h2>
+            </div>
+            <input
+                type="text"
+                id="buscador"
+                placeholder="🔎 Buscar producto..."
+                onkeyup="buscarProducto()"
+            >
+        </div>
+        <div id="lista-productos" class="productos-grid">
+            <!-- Los productos se cargarán con JavaScript -->
+        </div>
+    </section>
+    <!-- ==================== NOSOTROS ==================== -->
+    <section id="nosotros" class="nosotros">
+        <div>
+            <p class="etiqueta">SOBRE NOSOTROS</p>
+            <h2>Bienvenido a HGW Store</h2>
+            <p>
+                Somos una tienda dedicada a ofrecer productos HGW
+                para el cuidado personal, bienestar y uso diario.
+            </p>
+            <p>
+                Queremos brindarte una experiencia de compra sencilla,
+                rápida y segura.
+            </p>
+        </div>
+    </section>
+    <!-- ==================== CONTACTO ==================== -->
+    <section id="contacto" class="contacto">
+        <h2>¿Tienes alguna pregunta?</h2>
+        <p>
+            Escríbenos y estaremos disponibles para ayudarte.
+        </p>
+        <a
+            href="https://wa.me/573229272847"
+            target="_blank"
+            class="btn-whatsapp"
+        >
+            💬 Contactar por WhatsApp
+        </a>
+    </section>
+  <!-- ==================== CARRITO ==================== -->
+    <div id="fondo-carrito" class="fondo-carrito" onclick="cerrarCarrito()"></div>
+    <aside id="carrito" class="carrito">
+        <div class="carrito-header">
+            <h2>🛒 Mi carrito</h2>
+            <button onclick="cerrarCarrito()">✕</button>
+        </div>
+        <div id="productos-carrito" class="productos-carrito">
+            <p class="carrito-vacio">
+                Tu carrito está vacío.
+            </p>
+        </div>
+        <div class="carrito-footer">
+            <div class="total">
+                <span>Total:</span>
+
+                <strong id="total-carrito">
+                    $0
+                </strong>
+            </div>
+            <button
+                class="btn-pedido"
+                onclick="realizarPedido()"
+            >
+                📲 Realizar pedido
+            </button>
+        </div>
+    </aside>
+    <!-- ==================== PIE DE PÁGINA ==================== -->
+    <footer>
+        <div class="logo">
+            <span>HGW</span>
+            <small>STORE</small>
+        </div>
+        <p>
+            © 2026 HGW Store. Todos los derechos reservados.
+        </p>
+    </footer>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
